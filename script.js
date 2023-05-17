@@ -5,7 +5,7 @@ const addTooltipListener = (target, imgSrc, title, description) => {
     tooltip.style.top = event.pageY + "px";
     tooltip.innerHTML = `
       <div class="centerImg">
-        <img src="${imgSrc}" width="500px" height="300px">
+        <img src="${imgSrc}" width="250px" height="150">
         <h2>${title}</h2>
         <p>${description}</p>
       </div>
