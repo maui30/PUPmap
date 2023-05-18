@@ -1,22 +1,3 @@
-const addTooltipListener = (target, imgSrc, title, description) => {
-  target.addEventListener("mouseover", (event) => {
-    tooltip.style.display = "block";
-    tooltip.style.left = event.pageX + "px";
-    tooltip.style.top = event.pageY + "px";
-    tooltip.innerHTML = `
-      <div class="centerImg">
-        <img src="${imgSrc}" width="250px" height="150">
-        <h2>${title}</h2>
-        <p>${description}</p>
-      </div>
-    `;
-  });
-
-  target.addEventListener("mouseout", () => {
-    tooltip.style.display = "none";
-  });
-}
-
 let tooltip = document.querySelector("#tooltip");
 let chapel = document.querySelector("#chapel");
 let flagpole = document.querySelector("#flagPole");
@@ -36,6 +17,25 @@ let nallrc = document.querySelector("#nallrc");
 let linearPark = document.querySelector("#linearPark");
 let maingate = document.querySelector("#maingate");
 let pylon = document.querySelector("#pylon");
+
+const addTooltipListener = (areaHover, imgSrc, title, description) => {
+  areaHover.addEventListener("mouseover", (event) => {
+    tooltip.style.display = "block";
+    tooltip.style.left = event.pageX + "px";
+    tooltip.style.top = event.pageY + "px";
+    tooltip.innerHTML = `
+      <div class="centerImg">
+        <img src="${imgSrc}" width="250px" height="150">
+        <h2>${title}</h2>
+        <p>${description}</p>
+      </div>
+    `;
+  });
+
+  areaHover.addEventListener("mouseout", () => {
+    tooltip.style.display = "none";
+  });
+};
 
 addTooltipListener(
   chapel,
@@ -114,14 +114,12 @@ addTooltipListener(
   "The PUP Amphitheater is a notable architectural feature within the campus of the Polytechnic University of the Philippines. It is an outdoor venue characterized by tiered seating and a central stage, designed to accommodate performances, lectures, and other cultural events."
 );
 
-
 addTooltipListener(
   pasigRiver,
   "img/pasigriver.jpg",
   "Pasig River",
   "Pasig River is a significant waterway in the Philippines that runs through Metro Manila, including areas near PUP's location in Sta. Mesa, Manila."
 );
-
 
 addTooltipListener(
   gym,
@@ -130,7 +128,6 @@ addTooltipListener(
   "The PUP Gymnasium is a prominent sports facility located within the Polytechnic University of the Philippines campus. It is a spacious indoor arena designed to host various sporting events, competitions, and recreational activities."
 );
 
-
 addTooltipListener(
   grandstand,
   "img/grandstand.jpg",
@@ -138,12 +135,11 @@ addTooltipListener(
   "The PUP Grand Stand  is a large seating area with multiple tiers, designed to accommodate a significant number of spectators during sporting events and ceremonies."
 );
 
-
 addTooltipListener(
   nallrc,
   "img/nallrc.jpg",
   "Ninoy Aquino Library and Learning Resources Center",
-  "Named in honor of former Philippine senator Benigno \"Ninoy\" Aquino Jr., it serves as the main library and information hub for students, faculty, and researchers."
+  'Named in honor of former Philippine senator Benigno "Ninoy" Aquino Jr., it serves as the main library and information hub for students, faculty, and researchers.'
 );
 
 addTooltipListener(
@@ -153,7 +149,6 @@ addTooltipListener(
   "The PUP Linear Park a scenic and recreational area within the university campus, offering a pleasant environment for walking, jogging, and enjoying nature."
 );
 
-
 addTooltipListener(
   maingate,
   "img/maingate.jpg",
@@ -161,24 +156,10 @@ addTooltipListener(
   "The PUP Main Gate is the primary entrance and exit point of the Polytechnic University of the Philippines campus. It serves as the main access point for students, faculty, staff, and visitors."
 );
 
-
 addTooltipListener(
   pylon,
   "img/pylon.jpg",
   "PUP Pylon",
   "The Pylon originally stood for the true, the good and the beautiful. The Triad of pillars may also stand for wisdom, strength and beauty because there should be wisdom to contrive, strength to support and beauty to adorn any great or important undertaking. Since 1987, however, the Pylon came to symbolized truth, excellence and wisdom."
 );
-
-
-addTooltipListener(
-  samp,
-  "img/.jpg",
-  "",
-  ""
-);
-
-
-
-
-
 
